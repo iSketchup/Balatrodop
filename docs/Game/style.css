@@ -1,0 +1,21 @@
+#card {
+  position: absolute;
+  z-index: 9;
+  background-colFor: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  
+  cursor: grab;
+}
+
+#cardheader {
+  padding: 10px;
+  z-index: 10;
+  background-color: #219683;
+  color: #fff;
+}
+
+#cards{
+    position: relative;
+    bottom: 0cm;
+}
