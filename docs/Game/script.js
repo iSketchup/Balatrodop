@@ -27,6 +27,7 @@ let obstacle = {
     height: 40
 };
 
+
 // Input
 document.addEventListener("keydown", () => {
     if (player.grounded) {
@@ -57,6 +58,24 @@ function update() {
     }
 }
 
+
+function CheckCollition(){
+// false == hit
+
+if(player.x <= obstacle.x + obstacle.width && player.x + player.size >= obstacle.x &&
+   player.y <= obstacle.y + obstacle.height && player.y + player.size >= obstacle.y
+){
+    console.log("sigma");
+    
+    return false;
+}
+
+console.log("ligma");
+
+return true;
+
+}
+
 function drawGround() {
     ctx.fillStyle = "#555";
 
@@ -84,10 +103,20 @@ function draw() {
 }
 
 function loop() {
+    
+    if (!CheckCollition())
+    {
+        console.log("hit");
+        window.location.href = "../../docs";
+        return;
+
+    }
+
+
     update();
     draw();
     requestAnimationFrame(loop);
 }
 
 loop();
-``
+
