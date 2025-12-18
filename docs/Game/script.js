@@ -4,6 +4,8 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 400;
 
+let score = 0;
+
 // Player
 const player = {
     x: 100,
@@ -24,7 +26,8 @@ let obstacle = {
     x: 800,
     y: 300,
     width: 30,
-    height: 40
+    height: 40,
+    scored: false
 };
 
 
@@ -55,7 +58,16 @@ function update() {
 
     if (obstacle.x + obstacle.width < 0) {
         obstacle.x = 800;
+        obstacle.scored = false;
     }
+
+    Score();
+
+}
+
+function Score(){
+    if (player.x <= obstacle.x + obstacle.width && !obstacle.scored)
+        scored++;
 }
 
 
