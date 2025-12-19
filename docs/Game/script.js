@@ -142,7 +142,7 @@ function loop() {
         if (score > highscore) {
             localStorage.setItem("highscore", score);
 }
-    window.location.href = "/Jumper/docs/index.html";
+    window.location.href = "/Jumper/";
     return;
 
     }
